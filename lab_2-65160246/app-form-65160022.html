@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+    <html lang="en"> 
+        <head> 
+            <meta charset="UTF-8"> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <title>Job Application Form</title> 
+        </head> 
+        <body> 
+            <h1>ใบสมัครงาน</h1> 
+            <form>
+
+                <div class="registermain" style="width: 40%; margin-left: 15px;">
+                    <div class="ggmain" style="display: flex ;">
+
+                            <div class="gg1">
+                            <label for="name">ชื่อ </label><br>
+                            <input type="text" id="name" name="name" placeholder="ใส่ชื่อ" required>
+                            </div>
+            
+                            <div class="gg2" style="margin-left: 40px;">
+                            <label for="lastname">นามสกุล</label><br>
+                            <input type="text" id="lastname" name="lastname" placeholder="นามสกุล"  required>
+                            </div>
+            
+                        </div>
+
+                        <br>
+                        <label for="email">อีเมล</label><br>
+                        <input type="email" id="email" name="email" size="51" placeholder="อีเมล" required><br>
+
+                        <br>
+                        <label for="position">ตำแหน่งที่ต้องการสมัคร *</label><br>
+                        <input  type="text" id="position" name="position" size="51" placeholder="ตำแหน่งที่ต้องการสมัคร" required><br>
+                        </table>
+
+                        <br>
+                        <label for="website">เว็บไซต์ผลงาน</label><br>
+                        <input type="url" id="website" name="website" value="http://" size="51">
+                    
+                        <br>
+                        <div class="ggmain" style="display: flex ;">
+                            <div class="gg1">
+                                <label for="salary">เงินเดือนที่ต้องการ</label><br>
+                                <input type="number" id="salary" name="salary" placeholder="เงินเดือนที่ต้องการ">
+                            </div>
+                            <div class="gg2" style="margin-left: 40px;">
+                                <label for="startdate">จะเริ่มงานได้เมื่อไหร่</label><br>
+                                <input type="text" id="startdate" name="startdate" placeholder="จะเริ่มงานได้เมื่อไหร่">
+                            </div>  
+                        </div>      
+
+                        <br>
+                        <div class="ggmain" style="display: flex ;">
+                            <div class="gg1">
+                                <label for="phone">โทรศัพท์มือถือ*</label><br>
+                                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+                            </div>
+                            <div class="gg2" style="margin-left: 40px;">
+                                <label for="homephone">โทรศัพท์บ้าน</label><br>
+                                <input type="tel" id="homephone" name="homephone" placeholder="โทรศัพท์บ้าน">
+                            </div>
+                        </div>
+
+                        <br>
+                        <label for="moving">คุณสะดวกที่จะย้ายที่อยู่หรือไม่</label><br>
+                        <input type="radio" id="yes" name="moving" value="yes" required />
+                        <label for="yes">สะดวก</label>
+                        <input type="radio" id="no" name="moving" value="no" required />
+                        <label for="no">ไม่สะดวก</label>
+                        <input type="radio" id="notsure" name="moving" value="notsure" required />
+                        <label for="notsure">ไม่แน่ใจ</label><br>
+                        
+                        <br>
+                        <label for="jobcharacteristics">ลักษณะงานที่ทําในที่ทํางานล่าสุด</label><br>
+                        <input type="text" id="jobcharacteristics" name="jobcharacteristics" size="51" placeholder="ลักษณะงานที่ทําในที่ทํางานล่าสุด" required><br>
+
+                        <br>
+                        <label for="question">คําถาม</label><br>
+                        <textarea id="question" name="question"  rows="4" cols="54"></textarea><br>
+                        
+                        <input style="margin-left: 25%; margin-top: 5px;" type="submit" value="ส่งใบสมัคร">
+                    </div>
+                </div>
+
+            </form>
+        </body> 
+    </html>
