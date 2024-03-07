@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js - Form input binding</title>
+    <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Form Validation Demo</h1>
+<div id="app">
+    <!-- @submit เป็นรูปย่อของ v-on:submit -->
+    <form @submit.prevent="checkForm">
+        <div v-if="errors.length">
+            <b class="error">Please correct the following error(s):</b>
+            <ul>
+                <li v-for="error in errors" class="error">{{ error }}</li>
+            </ul>
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" v-model="name">
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" v-model="age" min="0">
+        </div>
+        <div>
+            <input type="radio" id="male" name="gender" value="male" v-model="gender"> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" v-model="gender"> <label for="female">Female</label>
+        </div>
+        <div>
+            <label for="movie">Your favorite Movie</label>
+            <select name="movie" id="movie" v-model="movie">
+                <option value="" disabled selected>Select your favorite movie</option>
+                <option>Star Wars</option>
+                <option>Vanilla Sky</option>
+                <option>Atomic Blonde</option>
+            </select>
+        </div>
+        <div>
+            <!-- <button @click="checkForm">Submit</button> -->
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                errors: [],
+                name: null,
+                age: null,
+                movie: null,
+                gender: null
+            }
+        },
+        methods: {
+            checkForm(e) {
+                this.errors = [];
+                if (!this.name) this.errors.push("Name required.");
+                if (!this.age) this.errors.push("Age required.");
+                if (!this.gender) this.errors.push("Gender required.");
+                if (!this.movie) this.errors.push("Favorite Movie required.");
+
+                if (this.errors.length === 0) {
+                    // ทำตามการจัดการฟอร์มเมื่อไม่มี errors
+                    // ยกเลิกการ submit ที่อยู่ในที่นี้
+                    // e.preventDefault();
+                }
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>
